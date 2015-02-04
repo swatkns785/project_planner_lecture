@@ -7,7 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
  this.resource('projects', function() {
- // causes projects.index route to be generated
+   this.route('show', { path: ':project_id' });
  });
 });
 
