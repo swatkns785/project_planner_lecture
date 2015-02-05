@@ -13,10 +13,11 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    createProject: function() {
-      var project = this.get('controller.newProject');
-
+    saveProject: function(project) {
       project.save();
+
+      var newProject = this.store.createRecord('project');
+      this.controller.set('newProject', newProject)
     }
   }
 });
